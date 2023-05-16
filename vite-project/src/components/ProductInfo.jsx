@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import product from '../assets/Products/상품_애플워치 스트랩.png';
+import ProductsList from '../assets/productsList/ProductsList'
 
 const StyledProductInfo = styled.div`
     position: relative;
@@ -73,12 +73,14 @@ color: #000000;
 const ProductInfo = () => {
     return (
         <div>
-            <StyledProductInfo>
-                <StyledImg src={product} alt='애플워치 스트랩' />
-                <ProductName>애플워치 스트랩</ProductName>
-                <ProductDiscount>20%</ProductDiscount>
-                <ProductPrice>150,000원</ProductPrice>
-            </StyledProductInfo>
+                {ProductsList.map((product) => (
+                    <StyledProductInfo key={product.id}>
+                        <StyledImg src={product.image} alt={product.name} />
+                        <ProductName>{product.name}</ProductName>
+                        <ProductDiscount>{product.discount}</ProductDiscount>
+                        <ProductPrice>{product.price}</ProductPrice>
+                    </StyledProductInfo>
+                ))}
         </div>
     )
 }
