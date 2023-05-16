@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import ProductInfo from '../components/ProductInfo'
 
 const StyledMain = styled.div`
 display: flex;
@@ -17,6 +18,7 @@ background: #FFFFFF;
 const MainPage = () => {
     return (
         <StyledMain>
+            <ProductInfo />
         </StyledMain>
     )
 }
