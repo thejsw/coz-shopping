@@ -1,10 +1,46 @@
 import styled from 'styled-components'
 import ProductsList from '../assets/productsList/ProductsList'
 
+const StyledTitle = styled.h1`
+/* position: absolute; */
+left: 15.17%;
+right: 70.86%;
+
+width: 179px;
+height: 38px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+`
+
+const StyledMain = styled.div`
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+`
+
 const StyledProductInfo = styled.div`
     position: relative;
     width: 264px;
     height: 264px;
+    margin: 10px 24px;
 `
 
 const StyledImg = styled.img`
@@ -73,6 +109,8 @@ color: #000000;
 const ProductInfo = () => {
     return (
         <div>
+            <StyledTitle>상품리스트</StyledTitle>
+        <StyledMain>
                 {ProductsList.map((product) => (
                     <StyledProductInfo key={product.id}>
                         <StyledImg src={product.image} alt={product.name} />
@@ -81,6 +119,8 @@ const ProductInfo = () => {
                         <ProductPrice>{product.price}</ProductPrice>
                     </StyledProductInfo>
                 ))}
+        </StyledMain>
+
         </div>
     )
 }
